@@ -28,18 +28,22 @@ body{
 }
 
 h1 {
-    font-size: 70px;
+    font-size: 75px;
     text-transform: uppercase;
     letter-spacing: 5px;
+    text-align: center;
 }
 
 h2 {
-    font-size: 30px;
+    font-size: 32px;
     letter-spacing: 4px;
+    text-align: center;
+    
 }
 
 h3 {
     letter-spacing: 4px;
+    text-align: center;
 }
 
 .social-media {
@@ -62,3 +66,120 @@ a:hover{
     background-color: #737373;
 }
 
+/*Menu Hamburguer */
+
+.checkbox {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999;
+    transition: 400ms ease-in-out;
+}
+
+.checkbox .trace {
+    width: 55px;
+    height: 2px;
+    background-color: #737373;
+    position: absolute;
+    border-radius: 4px;
+    transition: 0.5s ease-in-out;
+}
+
+.checkbox .trace:nth-child(1) {
+    top: 26px;
+    transform: rotate(0);
+}
+
+.checkbox .trace:nth-child(2) {
+    top: 46px;
+    transform: rotate(0);
+}
+
+.checkbox .trace:nth-child(3) {
+    top: 66px;
+    transform: rotate(0);
+}
+
+#toogle {
+    display: none;
+}
+
+/*MENU */
+
+.menu {
+    position: absolute;
+    top: 28px;
+    right: 30px;
+    background-color: transparent;
+    height: 4px;
+    width: 10px;
+    border-radius: 50px;
+    box-shadow: 0px 0px 0px 0px #a5a5a5;
+    z-index: -1;
+    transition: 400ms ease-in-out 0;
+}
+
+.menu-items {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100uh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden
+    transition: 400ms ease-in-out 0;
+}
+
+.menu-items ul {
+    list-style-type: none;
+}
+
+.menu-items ul li a {
+    margin: 10px 0;
+    color: #737373;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 40px;
+}
+
+/* Animação MENU */
+
+#toogle:checked + .checkbox .trace:nth-child(1) {
+    transform: rotate(45deg);
+    top: 47px;
+}
+
+#toogle:checked + .checkbox .trace:nth-child(2) {
+    transform: translate(-100px);
+    width: 30px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#toogle:checked + .checkbox .trace:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 48px;
+}
+
+#toogle:checked + .checkbox {
+    background-color: lightgrey;
+}
+
+#toogle:checked ~ .menu {
+    box-shadow: 0px 0px 0px 100vmax lightgrey;
+    z-index: 1;
+}
+
+#toogle:checked ~ .menu-items {
+    visibility: visible;
+    opacity: 1;
