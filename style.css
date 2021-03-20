@@ -30,7 +30,7 @@ body{
 h1 {
     font-size: 75px;
     text-transform: uppercase;
-    letter-spacing: 5px;
+    letter-spacing: 4px;
     text-align: center;
 }
 
@@ -42,7 +42,7 @@ h2 {
 }
 
 h3 {
-    letter-spacing: 4px;
+    letter-spacing: 2px;
     text-align: center;
 }
 
@@ -56,7 +56,7 @@ h3 {
     color:black;
     padding: 1rem 4rem;
     border: 1px #737373 solid;
-    min-width: 4rem;
+    min-width: 5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,6 +67,12 @@ a:hover{
 }
 
 /*Menu Hamburguer */
+
+.checkbox-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .checkbox {
     height: 100px;
@@ -86,7 +92,7 @@ a:hover{
     height: 2px;
     background-color: #737373;
     position: absolute;
-    border-radius: 4px;
+    border-radius: 5px;
     transition: 0.5s ease-in-out;
 }
 
@@ -105,7 +111,7 @@ a:hover{
     transform: rotate(0);
 }
 
-#toogle {
+#toggle {
     display: none;
 }
 
@@ -118,7 +124,7 @@ a:hover{
     background-color: transparent;
     height: 4px;
     width: 10px;
-    border-radius: 50px;
+    border-radius: 50%;
     box-shadow: 0px 0px 0px 0px #a5a5a5;
     z-index: -1;
     transition: 400ms ease-in-out 0;
@@ -135,7 +141,7 @@ a:hover{
     align-items: center;
     z-index: 2;
     opacity: 0;
-    visibility: hidden
+    visibility: hidden;
     transition: 400ms ease-in-out 0;
 }
 
@@ -154,32 +160,33 @@ a:hover{
 
 /* Animação MENU */
 
-#toogle:checked + .checkbox .trace:nth-child(1) {
+#toggle:checked + .checkbox .trace:nth-child(1) {
     transform: rotate(45deg);
     top: 47px;
 }
 
-#toogle:checked + .checkbox .trace:nth-child(2) {
+#toggle:checked + .checkbox .trace:nth-child(2) {
     transform: translate(-100px);
     width: 30px;
     visibility: hidden;
     opacity: 0;
 }
 
-#toogle:checked + .checkbox .trace:nth-child(3) {
+#toggle:checked + .checkbox .trace:nth-child(3) {
     transform: rotate(-45deg);
     top: 48px;
 }
 
-#toogle:checked + .checkbox {
+#toggle:checked + .checkbox {
     background-color: lightgrey;
 }
 
-#toogle:checked ~ .menu {
+#toggle:checked ~ .menu {
     box-shadow: 0px 0px 0px 100vmax lightgrey;
     z-index: 1;
 }
 
-#toogle:checked ~ .menu-items {
+#toggle:checked ~ .menu-items {
     visibility: visible;
     opacity: 1;
+}
